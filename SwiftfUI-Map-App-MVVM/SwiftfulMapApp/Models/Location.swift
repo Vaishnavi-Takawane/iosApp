@@ -1,9 +1,3 @@
-//
-//  Location.swift
-//  SwiftfulMapApp
-//
-//  Created by Nick Sarno on 11/27/21.
-//
 
 import Foundation
 import MapKit
@@ -16,6 +10,7 @@ struct Location: Identifiable, Equatable {
     let description: String
     let imageNames: [String]
     let link: String
+    let stateName: String
     
     // Identifiable
     var id: String {
