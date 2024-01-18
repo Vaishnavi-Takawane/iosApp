@@ -26,7 +26,7 @@ class LocationsViewModel: ObservableObject {
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     // Show list of locations
-    @Published var showLocationsList: Bool = false
+    @Published var showLocationsList: Bool = true
     
     // Show location detail via sheet
     @Published var sheetLocation: Location? = nil
@@ -36,7 +36,7 @@ class LocationsViewModel: ObservableObject {
         self.locations = locations
         self.mapLocation = locations.first!
         
-        self.updateMapRegion(location: locations.first!)
+        self.updateMapRegion(location: locations.first?)
     }
     
     private func updateMapRegion(location: Location) {
@@ -65,7 +65,7 @@ class LocationsViewModel: ObservableObject {
         // Get the current index
         guard let currentIndex = locations.firstIndex(where: { $0 == mapLocation }) else {
             print("Could not find current index in locations array! Should never happen.")
-            return
+            
         }
         
         // Check if the currentIndex is valid
