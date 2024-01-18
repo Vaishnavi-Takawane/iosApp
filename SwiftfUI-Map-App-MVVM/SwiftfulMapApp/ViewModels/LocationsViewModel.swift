@@ -1,9 +1,3 @@
-//
-//  LocationsViewModel.swift
-//  SwiftfulMapApp
-//
-//  Created by Nick Sarno on 11/27/21.
-//
 
 import Foundation
 import MapKit
@@ -26,7 +20,7 @@ class LocationsViewModel: ObservableObject {
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     // Show list of locations
-    @Published var showLocationsList: Bool = false
+    @Published var showLocationsList: Bool = true
     
     // Show location detail via sheet
     @Published var sheetLocation: Location? = nil
@@ -36,7 +30,7 @@ class LocationsViewModel: ObservableObject {
         self.locations = locations
         self.mapLocation = locations.first!
         
-        self.updateMapRegion(location: locations.first!)
+        self.updateMapRegion(location: locations.first?)
     }
     
     private func updateMapRegion(location: Location) {
