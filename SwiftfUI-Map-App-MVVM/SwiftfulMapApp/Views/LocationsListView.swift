@@ -1,11 +1,4 @@
-//
-//  LocationsListView.swift
-//  SwiftfulMapApp
-//
-//  Created by Nick Sarno on 11/27/21.
-//
 
-import SwiftUI
 
 struct LocationsListView: View {
     

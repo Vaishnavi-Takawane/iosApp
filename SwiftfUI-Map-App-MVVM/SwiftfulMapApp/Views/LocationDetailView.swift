@@ -1,9 +1,3 @@
-//
-//  LocationDetailView.swift
-//  SwiftfulMapApp
-//
-//  Created by Nick Sarno on 11/28/21.
-//
 
 import SwiftUI
 import MapKit
@@ -45,7 +39,7 @@ struct LocationDetailView_Previews: PreviewProvider {
 
 extension LocationDetailView {
     
-    private var imageSection: some View {
+    public var imageSection: some View {
         TabView {
             ForEach(location.imageNames, id: \.self) {
                 Image($0)
@@ -59,7 +53,7 @@ extension LocationDetailView {
         .tabViewStyle(PageTabViewStyle())
     }
     
-    private var titleSection: some View {
+    public var titleSection: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(location.name)
                 .font(.largeTitle)
